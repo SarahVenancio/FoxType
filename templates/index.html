@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que raposa você é?</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <img src="static/logo.png" alt="logo">
+        <h1>Fox Type</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="form">
+                <form action="/" method="post">
+                    <label for="" style="color: black;">Digite seu nome</label>
+                    <input type="text" name="nome">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="raposa">
+                {% if not url_imagem %}
+                    <img src="static/inicio.jpg" alt="..." style="height: 100%;">
+                {% else %}
+                    <img src="{{url_imagem}}">
+                    <p style="color: black; font-family: Caveat, serif;">{{nome}}</p>
+                {% endif %}
+                {% if erro %}
+                    <p>{{erro}}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Desenvolvido por Sarah 🦊💛</p>
+    </footer>
+</body>
+</html>
